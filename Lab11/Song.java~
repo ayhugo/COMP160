@@ -1,0 +1,47 @@
+/**  
+ * Song.java
+ * 
+ * Lab 11, COMP160 2015
+ */
+
+public class Song {
+  /** data field declarations */ 
+  private String songLine;
+  
+  
+  
+  /** constructor sets songLine */
+  public Song(String sLine){
+    songLine = sLine;
+  }//end method
+  
+  /**returns and displays information to the console window */  
+  public String toString(){     
+    return(songLine); 
+    
+  } //end method  
+  
+  public void process(){
+    
+    int firstSpace;
+    int secondSpace;
+    
+    
+    firstSpace = songLine.indexOf(" ", 0);
+    secondSpace = songLine.indexOf(" ", firstSpace + 1);
+    
+      
+    System.out.println("Length is: "+songLine.length());
+    System.out.println("last char is: "+songLine.charAt(songLine.length() - 1 ));
+    System.out.println(songLine.substring(0,secondSpace));
+    System.out.println(songLine.substring(secondSpace + 1, songLine.length()));
+    System.out.println("first letter of the third word is: "+songLine.charAt(secondSpace + 1));
+    System.out.println("in uppercase: "+songLine.toUpperCase());
+    System.out.println("replace spaces with x's: "+songLine.replace(' ', 'x'));
+    System.out.println(songLine.indexOf('b'));
+    System.out.println("************************************");
+    
+  
+  }//end method
+  
+}

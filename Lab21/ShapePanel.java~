@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ShapePanel extends JPanel {
+  Shape[] shapes = new Shape[20];
+  
+  JButton addShape;
+  JLabel countLabel;
+  JTextField countDisplay;
+  JPanel controlPanel;
+  ButtonListener buttonListener;
+  
+  
+   public static void main(String [] args){
+    JFrame frame = new JFrame("Shape Panel");
+    frame.setContentPane(new ShapePanel());
+    frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+    frame.pack();
+    frame.setVisible(true);
+  }
+   
+   public ShapePanel(){
+    addShape = new JButton("Add Shape");
+    countDisplay = new JTextField(2);
+    countLabel = new JLabel("Count:");
+    buttonListener = new ButtonListener();
+    
+    addShape.addActionListener(buttonListener);
+    controlPanel.add(addShape);
+    controlPanel.add(countLabel);
+    controlPanel.add(countDisplay);
+    
+    controlPanel.setPreferredSize(new Dimension(100, 400));
+    add(controlPanel);
+    //add(drawPanel);
+   }
+}

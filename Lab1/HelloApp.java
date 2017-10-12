@@ -1,0 +1,9 @@
+/** Hello world exercise
+  * lab 1 comp160 part 1
+  * Hugo Ayre july 2015
+  */
+public class HelloApp {
+  public static void main (String[] args){
+    System.out.println("hello world");
+  }
+}

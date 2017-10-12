@@ -1,0 +1,77 @@
+/**  
+ * Shape.java
+ * 
+ * Lab 22, COMP160 2015
+ */
+package shapes;
+import java.util.Random;
+import java.awt.*;
+
+public class Shape {
+  private int x, y, width, height;
+  private Color color;
+  
+  int red, green, blue;
+  int moveX = 1;
+  int moveY = 1;
+  int colourStep = 1;
+  
+  
+  /* returns a random int between min and max */
+  private int randomNumber(int lo, int hi){
+    int randomInt, range = hi - lo;
+    Random random = new Random(); // create a random generator
+    
+    randomInt = random.nextInt(range) + lo;
+    return randomInt;
+  }//randomNumber
+  
+  /* a constructor to set start data fields to random variables */
+  public Shape(){
+    
+    
+    this.width = randomNumber(10, 30);
+    this.height = width;
+    
+    this.x = randomNumber(0, (400-width));
+    this.y = randomNumber(0, (400-height));
+    
+    this.red = randomNumber(0, 255);
+    this.green = randomNumber(0, 255);
+    this.blue = randomNumber(0, 255);
+    
+    this.color = new Color(red, green, blue);
+  }
+  
+  /* draws the oval */
+  public void display(Graphics g){
+    g.setColor(color);
+    g.fillOval(x, y, width, height);
+  }
+  
+  /* move the shape by moveX and moveY */
+  public void move(){
+    if (this.x == 0 || this.x == (400 - width)){
+      this.moveX *= -1;
+    }
+    if (this.y == 0 || this.y == (400 - height)){
+      this.moveY *= -1;
+    }
+    
+     this.x += this.moveX;
+     this.y += this.moveY;
+    
+  }
+  
+  public void colorChange(){
+    if (this.red == 255 || this.green == 255 || this.blue == 255){
+      this.colourStep *= -1;
+     }
+     
+    if (this.red == 0 || this.green == 0 || this.blue == 0){
+      this.colourStep *= -1;
+     }
+    
+    this.color = new Color(this.red += this.colourStep,this.green += this.colourStep,this.blue += this.colourStep);
+  }
+}

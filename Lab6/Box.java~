@@ -1,0 +1,13 @@
+/**  
+ * Box.java
+ * 
+ * Lab 7, COMP160 2015
+ */
+
+// import graphics classes including JFrame
+import javax.swing.*;
+import java.awt.*;
+
+public class Box extends JFrame {
+  public void setHeight
+}

@@ -1,0 +1,36 @@
+/**  
+ * strings.java
+ * 
+ * Lab 12, COMP160 2015
+ */
+import java.util.Scanner;
+
+public class strings {
+  public static void main(String[]args){
+    String mySentance;
+    int countVowel = 0, countConstant = 0, num =0;
+    
+    /** gets input from user*/
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter a sentance:");
+    mySentance = scan.nextLine();
+    
+    while (num < mySentance.length()){
+      switch (mySentance.charAt(num)){
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+          countVowel = countVowel + 1;
+          break;
+        default:
+          countConstant = countConstant + 1;
+      } // end switch
+              num++;
+              
+   }//end while
+    System.out.println("VowelCount : "+countVowel);
+    System.out.println("VowelConstant : "+countConstant);
+ }//end main
+}//end public
